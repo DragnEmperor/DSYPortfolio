@@ -131,6 +131,11 @@
                 </a>
               </li>
             </ul>
+            <div class="counter darkblue">
+              <div class="counter-icon"><i class="fa fa-user"></i></div>
+              <h3>Visitor Count</h3>
+              <span class="counter-value" id="count-value"></span>
+          </div>
           </div>
         </div>
         <div class="col-xs-12 col-md-8" itemprop="description">
@@ -156,20 +161,6 @@
                   <div class="description">
                     <p class="course">Ph.D. (VLSI Design), 2018</p>
                     <p class="institution">PDPM Indian Institute of Information Technology, Design & Manufacturing Jabalpur M.P</p>
-                  </div>
-                </li>
-                <li>
-                  <i class="fa-li fa fa-graduation-cap"></i>
-                  <div class="description">
-                    <p class="course">M.E , 2011</p>
-                    <p class="institution">Shri Govindram Seksaria Institute of Technology and Science Indore M.P</p>
-                  </div>
-                </li>
-                <li>
-                  <i class="fa-li fa fa-graduation-cap"></i>
-                  <div class="description">
-                    <p class="course">B.E , 2009</p>
-                    <p class="institution">Samrat Ashok Technological Institute Vidisha M.P</p>
                   </div>
                 </li>
               </ul>
@@ -308,7 +299,6 @@
           <ul>
             <li>Received Best Paper Award for 3D Networking and Collaborative Environment for Online Education at ICETET-SIP-22</li>
             <li>Received Best Paper Award for Cloud based psychopathology companion at ICETET-SIP-22</li>
-            <li>Received Jonsson School Graduate Study Scholarship </li>
             <li>Assistant Faculty In charge - Central Security Institute, NIT Hamirpur (12/2018 - 08/2020) </li>
             <li>Assistant Faculty In charge - Sports & Yoga Activities (04/2019 - 08/2020) </li>
             <li>Assistant Warden - Himadri Boys Hostel, NIT Hamirpur (03/2019 - 06/2020) </li>
@@ -387,6 +377,16 @@
     integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ=="
     crossorigin="anonymous"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+      updateVisitCount();
+      function updateVisitCount() {
+        fetch('https://api.countapi.xyz/update/dsyadav/dsy/?amount=1')
+          .then(res => res.json())
+          .then(res => {
+            document.getElementById('count-value').innerHTML = res.value;
+          })
+      }
+  </script>
 </body>
 
 </html>
